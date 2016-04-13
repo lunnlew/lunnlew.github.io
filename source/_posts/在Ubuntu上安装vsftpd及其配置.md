@@ -49,3 +49,10 @@ echo "pasv_enable=Yes
 pasv_min_port=40000
 pasv_max_port=49999" > ~/vsftpd.conf
 ```
+
+
+## 安装脚本
+
+``` sh
+wget -qO- https://raw.githubusercontent.com/lunnlew/ubuntu_helper/master/Install_ftp_on_Ubuntu.sh | sh -x
+````
