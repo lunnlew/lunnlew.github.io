@@ -1,8 +1,5 @@
-title: 在Ubuntu上安装vsftpd及其配置
-date: 2016-04-13 13:07:59
-tags:
 ---
-title: "在Ubuntu上安装vsftpd及其配置"
+title: 在Ubuntu上安装vsftpd及其配置
 date: 2016-04-13 13:07:59
 tags:
 ---
