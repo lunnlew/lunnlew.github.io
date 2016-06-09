@@ -1,7 +1,8 @@
 ---
 title: "Mysql与时间段相关的sql查询统计"
 date: 2016-04-13 13:07:59
-tags:
+tags: [数据库,Mysql]
+categories: [数据库,Mysql]
 ---
 
 [time_field]字段的存储类型是DATETIME类型或者TIMESTAMP类型
@@ -39,16 +40,16 @@ tags:
     select * from [table] where str_to_date([time_field],'%Y-%m-%d %H:%i:%s')>='2012-06-28 08:00:00' and str_to_date([time_field],'%Y-%m-%d %H:%i:%s')<='2012-06-28 09:59:59'
 ```
 
- 
+
 ### 按年汇总，统计:
 ``` sql
 	select sum(mymoney) as totalmoney, count(*) as sheets from [table] group by date_format([time_field], '%Y')
 ```
-### 按月汇总，统计: 
+### 按月汇总，统计:
 ``` sql
 	select sum(mymoney) as totalmoney, count(*) as sheets from [table] group by date_format([time_field], '%Y-%m')
 ```
-### 按季度汇总，统计: 
+### 按季度汇总，统计:
 ``` sql
 	select sum(mymoney) as totalmoney,count(*) as sheets from [table] group by concat(date_format([time_field], '%Y'),FLOOR((date_format([time_field], '%m')+2)/3))
 ```

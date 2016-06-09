@@ -1,7 +1,8 @@
 ---
 title: "Innodb与MyISAM的区别"
 date: 2016-04-13 13:07:59
-tags:
+tags: [数据库,Mysql]
+categories: [数据库,Mysql]
 ---
 
 1.InnoDB不支持FULLTEXT类型的索引。

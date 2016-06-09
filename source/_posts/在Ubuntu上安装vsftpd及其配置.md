@@ -1,7 +1,8 @@
 ---
 title: 在Ubuntu上安装vsftpd及其配置
 date: 2016-04-13 13:07:59
-tags:
+tags: [Ubuntu,vsftpd]
+categories: [Linux,Ubuntu]
 ---
 
 ## 安装步骤

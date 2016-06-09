@@ -1,7 +1,8 @@
 ---
 title: 在Ubuntu上安装HEXO及其配置
 date: 2016-04-13 22:19:43
-tags:
+tags: [Ubuntu,HEXO]
+categories: [Linux应用,Ubuntu]
 ---
 
 ## 安装Node.js
@@ -24,7 +25,3 @@ npm install -g hexo
 hexo init myblog
 cd myblog && npm install
 ```
-
-
-
-
