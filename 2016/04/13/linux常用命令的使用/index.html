@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>linux常用命令的使用 | 程序猿家的小八哥 &amp;#8211; 一个野生程序员的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="文件命名除/外所有字符可作为文件名
+避免使用.作为普通文件名首字符(以.开始命名为隐藏)
+文件名严格区分大小写
+命令格式命令 -选项 参数
+常用命令ls-列出目录文件命令    ls [-a|l|d] [file|dir]
+词汇    list
+权限    任意用户
+用法
+a   显示所有文件(包括隐藏文件),all
+l   显示详细信息,long
+d   显示指定目录的信息,directory">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux常用命令的使用">
+<meta property="og:url" content="http://yoursite.com/2016/04/13/linux常用命令的使用/index.html">
+<meta property="og:site_name" content="程序猿家的小八哥 &#8211; 一个野生程序员的博客">
+<meta property="og:description" content="文件命名除/外所有字符可作为文件名
+避免使用.作为普通文件名首字符(以.开始命名为隐藏)
+文件名严格区分大小写
+命令格式命令 -选项 参数
+常用命令ls-列出目录文件命令    ls [-a|l|d] [file|dir]
+词汇    list
+权限    任意用户
+用法
+a   显示所有文件(包括隐藏文件),all
+l   显示详细信息,long
+d   显示指定目录的信息,directory">
+<meta property="og:updated_time" content="2016-06-09T08:47:52.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="linux常用命令的使用">
+<meta name="twitter:description" content="文件命名除/外所有字符可作为文件名
+避免使用.作为普通文件名首字符(以.开始命名为隐藏)
+文件名严格区分大小写
+命令格式命令 -选项 参数
+常用命令ls-列出目录文件命令    ls [-a|l|d] [file|dir]
+词汇    list
+权限    任意用户
+用法
+a   显示所有文件(包括隐藏文件),all
+l   显示详细信息,long
+d   显示指定目录的信息,directory">
+  
+    <link rel="alternate" href="/atom.xml" title="程序猿家的小八哥 &amp;#8211; 一个野生程序员的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">程序猿家的小八哥 &amp;#8211; 一个野生程序员的博客</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">一个野生程序员的博客</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-linux常用命令的使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/13/linux常用命令的使用/" class="article-date">
+  <time datetime="2016-04-13T05:07:59.000Z" itemprop="datePublished">2016-04-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux应用/">Linux应用</a>►<a class="article-category-link" href="/categories/Linux应用/常用命令/">常用命令</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      linux常用命令的使用
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="文件命名"><a href="#文件命名" class="headerlink" title="文件命名"></a>文件命名</h3><pre><code>除/外所有字符可作为文件名
+避免使用.作为普通文件名首字符(以.开始命名为隐藏)
+文件名严格区分大小写
+</code></pre><h3 id="命令格式"><a href="#命令格式" class="headerlink" title="命令格式"></a>命令格式</h3><pre><code>命令 -选项 参数
+</code></pre><h4 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h4><h5 id="ls-列出目录文件"><a href="#ls-列出目录文件" class="headerlink" title="ls-列出目录文件"></a>ls-列出目录文件</h5><pre><code>命令    ls [-a|l|d] [file|dir]
+词汇    list
+权限    任意用户
+用法
+a   显示所有文件(包括隐藏文件),all
+l   显示详细信息,long
+d   显示指定目录的信息,directory
+示例
+ls -ld /tmp     显示/tmp目录自身详细信息
+ls -al /home    显示/home目录下的文件与目录详细信息
+
+--------命令相关----------
+drwxr-xr-x
+结构    文件类型(1),权限串(9)
+文件类型
+    d   目录
+    -   二进制文件
+    l   软链接文件
+权限
+    r   读,read
+    w   写,write
+    x   执行,execute
+权限串
+    结构    所有者权限(3),所属组权限(3),其他用户权限(3)
+    rwxr-xr-x
+        rwx 所有者权限,可读写与执行
+        r-x 所属组权限,读与执行
+        r-x 其他用户权限,读与执行
+</code></pre><h5 id="cd-目录切换"><a href="#cd-目录切换" class="headerlink" title="cd-目录切换"></a>cd-目录切换</h5><pre><code>命令    cd [目录]
+词汇    change directory
+权限    任意用户
+示例
+cd /    切换到根目录
+cd ..   切换到上级目录
+</code></pre><h5 id="pwd-输出当前工作目录名"><a href="#pwd-输出当前工作目录名" class="headerlink" title="pwd-输出当前工作目录名"></a>pwd-输出当前工作目录名</h5><pre><code>命令    pwd
+词汇    print working directory
+权限    任意用户
+</code></pre><h5 id="touch-创建空文件"><a href="#touch-创建空文件" class="headerlink" title="touch-创建空文件"></a>touch-创建空文件</h5><pre><code>命令    touch   [文件名]
+权限    任意用户
+示例
+touch test.txt
+</code></pre><h4 id="mkdir-建立目录"><a href="#mkdir-建立目录" class="headerlink" title="mkdir-建立目录"></a>mkdir-建立目录</h4><pre><code>命令    mkdir [目录名]
+词汇    make directory
+权限    任意用户
+示例
+mkdir test
+</code></pre><h5 id="cp-文件或目录复制"><a href="#cp-文件或目录复制" class="headerlink" title="cp-文件或目录复制"></a>cp-文件或目录复制</h5><pre><code>命令    cp [-R] [src] [des]
+词汇    copy
+权限    任意用户
+用法
+R   递归复制目录,recursive
+示例
+cp file newfile     复制文件file到newfile
+cp -R dir newdir    递归复制目录dir到newdir下
+</code></pre><h5 id="mv-移动或者更名文件"><a href="#mv-移动或者更名文件" class="headerlink" title="mv-移动或者更名文件"></a>mv-移动或者更名文件</h5><pre><code>命令    mv [src] [des]
+词汇    move
+权限    任意用户
+示例
+mv dir1/file dir2      移动到dir2目录
+mv dir1/file dir2/newfile   移动到dir2目录的newfile文件
+mv dir1/file dir1/newfile   更名为newfile
+</code></pre><h5 id="rm-删除目录或文件"><a href="#rm-删除目录或文件" class="headerlink" title="rm-删除目录或文件"></a>rm-删除目录或文件</h5><pre><code>命令    rm [-r|f] [dir|file]
+词汇    remove
+权限    任意用户
+用法
+r   递归删除,recursive
+f   确认与强制删除,force
+示例
+rm -r dir   递归删除目录,文件
+rm -rf dir  无提示递归删除目录,文件
+</code></pre><h5 id="cat-显示文件内容"><a href="#cat-显示文件内容" class="headerlink" title="cat-显示文件内容"></a>cat-显示文件内容</h5><pre><code>命令    cat [file]
+词汇    concatenate and display files
+权限    任意用户
+示例
+cat /etc/conf.ini   查看conf.ini文件内容
+</code></pre><h5 id="more-分页显示文件内容"><a href="#more-分页显示文件内容" class="headerlink" title="more-分页显示文件内容"></a>more-分页显示文件内容</h5><pre><code>命令    more [file]
+权限    任意用户
+按键用法
+空格,f  下一页
+enter   下一行
+q,Q     退出
+示例
+more largefile
+</code></pre><h5 id="head-查看前几行"><a href="#head-查看前几行" class="headerlink" title="head-查看前几行"></a>head-查看前几行</h5><pre><code>命令    head [-{num}] [file]
+权限    任意用户
+示例
+head -20 file   查看file前20行
+</code></pre><h5 id="tail-查看后几行"><a href="#tail-查看后几行" class="headerlink" title="tail-查看后几行"></a>tail-查看后几行</h5><pre><code>命令    tail [-{num}] [file]
+权限    任意用户
+用法
+f   动态刷新,flush
+示例
+tail -20 file   查看file后20行
+tail -5 -f file 不停地刷新输出最后5行
+</code></pre><h5 id="ln-创建链接文件"><a href="#ln-创建链接文件" class="headerlink" title="ln-创建链接文件"></a>ln-创建链接文件</h5><pre><code>命令    ln [-s] [file] [linkfile]
+词汇    link
+权限    任意用户
+用法
+s   软链接,soft
+示例
+ln -s file /usr/linkfile    建立一个软链接文件
+ln file /usr/linkfile    建立一个硬链接文件
+
+--------命令相关----------
+软链接文件
+    类似windows快捷方式
+    可跨文件系统
+    源文件删除后不可正常使用
+硬链接文件
+    不可跨文件系统
+    与原文件具有相同inode(linux文件的数字识别id,命令 ls -i)
+    类似一个原文件复制,但不是一个复制
+    源文件删除后可正常使用
+</code></pre><h5 id="chmod-权限设定"><a href="#chmod-权限设定" class="headerlink" title="chmod-权限设定"></a>chmod-权限设定</h5><pre><code>命令    chmod [(ugoa)(+-)(rwx)] [文件或目录]
+        chmod [mode={num}]  [文件和目录]
+权限    任意用户
+示例
+chmod g+w  rwxrwxrwx file
+chmod 777  file
+
+--------命令相关----------
+r   4
+w   2
+x   1
+-   0
+mode    为三位数字值，每位数字为rwx-的和值
+
+项      文件            目录
+read    读文件内容      列出文件与目录
+write   修改文件内容    创建或者删除文件,目录
+x       执行文件        进入目录
+
+删除文件前提是对目录有写权限
+缺省创建文件无可执行权限
+</code></pre><h5 id="umask-缺省权限查看设置"><a href="#umask-缺省权限查看设置" class="headerlink" title="umask-缺省权限查看设置"></a>umask-缺省权限查看设置</h5><pre><code>命令    umask [-S]
+示例
+umask       查看缺省权限,输出的是掩码值,换算关系(777=掩码值+实际权限值)
+umask -S    
+umask 027   缺省权限设置(实际权限为777-027=750)
+
+--------命令相关----------
+0022    umask返回四位权限掩码值
+    0       特殊权限位
+    022     用户权限位,实际权限(777-022=755)
+</code></pre><h5 id="which-显示命令所在路径"><a href="#which-显示命令所在路径" class="headerlink" title="which-显示命令所在路径"></a>which-显示命令所在路径</h5><pre><code>命令    which [命令]
+权限    任意用户
+示例
+which ls    查看ls命令路径
+</code></pre><h5 id="whereis-在特定目录中查找符合条件的文件"><a href="#whereis-在特定目录中查找符合条件的文件" class="headerlink" title="whereis-在特定目录中查找符合条件的文件"></a>whereis-在特定目录中查找符合条件的文件</h5><pre><code>命令    whereis [file]
+权限    任意用户
+示例
+whereis ls
+</code></pre><h5 id="find-搜索文件或目录"><a href="#find-搜索文件或目录" class="headerlink" title="find-搜索文件或目录"></a>find-搜索文件或目录</h5><pre><code>命令    find [搜索路径] [-name] [搜索关键字]
+        find [搜索路径] [-size] [+-{size}]
+        find [搜索路径] [-user] [用户]
+        find [搜索路径] [-ctime|atime|mtime|cmin|amin|mmin] [+-{num}]
+        find [搜索路径] [-inum] {num}
+        find ---- -exec {} \;
+权限    任意用户
+用法
+name    根据文件名查找,默认全名搜索
+    *   0到多个字符
+    ?   一个字符
+size    根据文件大小查找,常用是数据块block数(1block = 512btye = 0.5kb)
+user    根据所有者查找
+a       连接符,and
+o       连接符,or
+f,l,d   文件类型,-type [{type}]
+示例
+find /test -name test       只找到test
+find /test -name test*      以test开始的文件名
+find /test -name test?      以test开始,五个字符的文件名
+find /test -size 163840 -a -size 204800 查找文件大小在80mb到100mb之间的文件
+find /test -mmin -120       寻找120分钟内访问过得文件
+find /test -name test -exec rm {} \;    删除test/目录下的test文件
+find /test -inum 16     查找i节点num的文件,对非规范名操作如删除等很有用
+--------命令相关----------
+ctime,atime,mtime   与天相关
+cmin,amin,mmin      与分相关
+c   change,文件属性改变,所有者,权限等
+a   access,文件被访问
+m   modify,文件内容被修改
+{}  -exec前命令执行结果
+\;  \转义符,&apos;\;&apos;;号转义
+</code></pre><h5 id="locate-列出相关的文件目录-linux"><a href="#locate-列出相关的文件目录-linux" class="headerlink" title="locate-列出相关的文件目录(linux)"></a>locate-列出相关的文件目录(linux)</h5><pre><code>命令    locate [关键字]
+词汇    list files in databases
+权限    任意用户
+示例
+locate  file
+--------命令相关----------
+从目录索引数据库中搜索
+</code></pre><h5 id="updatedb-建立目录索引数据库"><a href="#updatedb-建立目录索引数据库" class="headerlink" title="updatedb-建立目录索引数据库"></a>updatedb-建立目录索引数据库</h5><pre><code>命令    updatedb
+词汇    update the slocate database
+权限    任意用户
+</code></pre><h5 id="grep-搜索匹配行"><a href="#grep-搜索匹配行" class="headerlink" title="grep-搜索匹配行"></a>grep-搜索匹配行</h5><pre><code>命令    grep [keywords] [file]
+权限    任意用户
+</code></pre><h5 id="man-查看命令或配置文件帮助信息"><a href="#man-查看命令或配置文件帮助信息" class="headerlink" title="man-查看命令或配置文件帮助信息"></a>man-查看命令或配置文件帮助信息</h5><pre><code>命令    man [命令|配置]
+词汇    manual
+权限    任意用户
+示例
+man ls
+</code></pre><h5 id="info-获取帮助信息"><a href="#info-获取帮助信息" class="headerlink" title="info-获取帮助信息"></a>info-获取帮助信息</h5><pre><code>命令    info [关键字]
+词汇    information
+权限    任意用户
+示例
+info ls
+</code></pre><h5 id="whatis-简略信息"><a href="#whatis-简略信息" class="headerlink" title="whatis-简略信息"></a>whatis-简略信息</h5><pre><code>命令    whatis [命令]
+权限    任意用户
+示例
+whatis ls
+</code></pre><h5 id="apropos-关键字相关信息"><a href="#apropos-关键字相关信息" class="headerlink" title="apropos-关键字相关信息"></a>apropos-关键字相关信息</h5><pre><code>命令    apropos [关键字]
+权限    任意用户
+</code></pre><h5 id="gzip-文件压缩"><a href="#gzip-文件压缩" class="headerlink" title="gzip-文件压缩"></a>gzip-文件压缩</h5><pre><code>命令    gzip [选项] [文件]
+词汇    GUN zip
+权限    任意用户
+用法
+d   解压文件
+结果    .gz后缀
+示例
+gzip file   压缩文件
+gzip -d file.zip    解压文件
+</code></pre><h5 id="gunzip-文件解压缩"><a href="#gunzip-文件解压缩" class="headerlink" title="gunzip-文件解压缩"></a>gunzip-文件解压缩</h5><pre><code>命令    gunzip [选项] [待解压文件]
+词汇    GUN unzip
+权限    任意用户
+示例
+gunzip file.gz   压缩文件
+</code></pre><h4 id="tar-目录打包"><a href="#tar-目录打包" class="headerlink" title="tar-目录打包"></a>tar-目录打包</h4><pre><code>命令    tar [-c|v|f] [目标文件] [待打包目录]
+权限    任意用户
+用法
+c   create,建立打包文件
+v   显示详细信息
+f   file,指定文件名
+z   打包同时解压缩
+x   解包文件
+结果    .tar.gz
+示例
+tar -zcvf dir.tar.gz dir    打包并压缩
+tar -zxf dir.tar.gz 解包并解压缩
+--------命令相关----------
+file filename   查看文件信息
+</code></pre><h5 id="zip-压缩文件或者目录"><a href="#zip-压缩文件或者目录" class="headerlink" title="zip-压缩文件或者目录"></a>zip-压缩文件或者目录</h5><pre><code>命令    zip [-r] [目标文件名] [源文件或目录]
+权限    任意用户
+结果    .zip
+用法
+r       递归压缩目录
+示例
+zip -r dir.zip dir  压缩dir目录
+</code></pre><h5 id="bzip2-压缩文件或者目录"><a href="#bzip2-压缩文件或者目录" class="headerlink" title="bzip2-压缩文件或者目录"></a>bzip2-压缩文件或者目录</h5><pre><code>命令    bzip2 [-k] [源文件或目录]
+权限    任意用户
+结果    .bz2
+用法
+k   产生压缩文件时保留原文件
+示例
+bzip2 -k file
+</code></pre><h5 id="bunzip2-解压缩文件"><a href="#bunzip2-解压缩文件" class="headerlink" title="bunzip2-解压缩文件"></a>bunzip2-解压缩文件</h5><pre><code>命令    bunzip2 [-k] [文件]
+权限    任意用户
+结果    .bz2
+用法
+k   解压缩文件时保留原文件
+示例
+bunzip2 -k file
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/04/13/linux常用命令的使用/" data-id="cirzvkyte000kg46m0ktvj3g9" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/命令/">命令</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/04/13/Mysql与时间段相关的sql查询统计/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          Mysql与时间段相关的sql查询统计
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/04/13/vim模式-模式命令/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">vim模式-模式命令</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Catégories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/Ubuntu/">Ubuntu</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux应用/">Linux应用</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux应用/Ubuntu/">Ubuntu</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux应用/常用命令/">常用命令</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/开发/">开发</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/开发/安全/">安全</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/Mysql/">Mysql</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Mot-clés</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/HEXO/">HEXO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mysql/">Mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VIM命令/">VIM命令</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hash/">hash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vsftpd/">vsftpd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/命令/">命令</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/安全/">安全</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/密码/">密码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发/">开发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/HEXO/" style="font-size: 10px;">HEXO</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/Mysql/" style="font-size: 15px;">Mysql</a> <a href="/tags/Ubuntu/" style="font-size: 15px;">Ubuntu</a> <a href="/tags/VIM命令/" style="font-size: 15px;">VIM命令</a> <a href="/tags/hash/" style="font-size: 10px;">hash</a> <a href="/tags/vsftpd/" style="font-size: 10px;">vsftpd</a> <a href="/tags/命令/" style="font-size: 10px;">命令</a> <a href="/tags/安全/" style="font-size: 10px;">安全</a> <a href="/tags/密码/" style="font-size: 10px;">密码</a> <a href="/tags/开发/" style="font-size: 10px;">开发</a> <a href="/tags/数据库/" style="font-size: 15px;">数据库</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/08/18/使用HEXO搭建个人博客/">使用HEXO搭建个人博客</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/09/正确对加盐(salt)密码进行HASH操作/">正确对加盐(salt)密码进行HASH操作</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/13/在Ubuntu上安装HEXO及其配置/">在Ubuntu上安装HEXO及其配置</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/13/Innodb与MyISAM的区别/">Innodb与MyISAM的区别</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/13/Mysql与时间段相关的sql查询统计/">Mysql与时间段相关的sql查询统计</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 LunnLew<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

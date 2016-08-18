@@ -3,17 +3,36 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives | 程序猿家的小八哥 &amp;#8211; 一个野生程序员的博客</title>
+  <title>正确对加盐(salt)密码进行HASH操作 | 程序猿家的小八哥 &amp;#8211; 一个野生程序员的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一个野生程序员的博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="程序猿家的小八哥 &#8211; 一个野生程序员的博客">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="参考
+原始文章:http://crackstation.net/hashing-security.htm
+翻译文章:http://drops.wooyun.org/papers/1066
+功能声明:https://defuse.ca/php-pbkdf2.htm
+Github(Origin):https://github.com/defuse/password-hashing
+
+背景大多数开发者">
+<meta property="og:type" content="article">
+<meta property="og:title" content="正确对加盐(salt)密码进行HASH操作">
+<meta property="og:url" content="http://yoursite.com/2016/06/09/正确对加盐(salt)密码进行HASH操作/index.html">
 <meta property="og:site_name" content="程序猿家的小八哥 &#8211; 一个野生程序员的博客">
-<meta property="og:description" content="一个野生程序员的博客">
+<meta property="og:description" content="参考
+原始文章:http://crackstation.net/hashing-security.htm
+翻译文章:http://drops.wooyun.org/papers/1066
+功能声明:https://defuse.ca/php-pbkdf2.htm
+Github(Origin):https://github.com/defuse/password-hashing
+
+背景大多数开发者">
+<meta property="og:updated_time" content="2016-06-09T08:47:52.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="程序猿家的小八哥 &#8211; 一个野生程序员的博客">
-<meta name="twitter:description" content="一个野生程序员的博客">
+<meta name="twitter:title" content="正确对加盐(salt)密码进行HASH操作">
+<meta name="twitter:description" content="参考
+原始文章:http://crackstation.net/hashing-security.htm
+翻译文章:http://drops.wooyun.org/papers/1066
+功能声明:https://defuse.ca/php-pbkdf2.htm
+Github(Origin):https://github.com/defuse/password-hashing
+
+背景大多数开发者">
   
     <link rel="alternate" href="/atom.xml" title="程序猿家的小八哥 &amp;#8211; 一个野生程序员的博客" type="application/atom+xml">
   
@@ -66,191 +85,79 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/08/18/使用HEXO搭建个人博客/" class="archive-article-date">
-  <time datetime="2016-08-18T03:07:40.000Z" itemprop="datePublished">Aug 18</time>
+        <section id="main"><article id="post-正确对加盐(salt)密码进行HASH操作" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/09/正确对加盐(salt)密码进行HASH操作/" class="article-date">
+  <time datetime="2016-06-09T07:29:59.000Z" itemprop="datePublished">2016-06-09</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/开发/">开发</a>►<a class="article-category-link" href="/categories/开发/安全/">安全</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/08/18/使用HEXO搭建个人博客/">使用HEXO搭建个人博客</a>
+    <h1 class="article-title" itemprop="name">
+      正确对加盐(salt)密码进行HASH操作
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/06/09/正确对加盐(salt)密码进行HASH操作/" class="archive-article-date">
-  <time datetime="2016-06-09T07:29:59.000Z" itemprop="datePublished">Jun 9</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/06/09/正确对加盐(salt)密码进行HASH操作/">正确对加盐(salt)密码进行HASH操作</a>
-    </h1>
-  
+        <hr>
+<p>参考</p>
+<pre><code>原始文章:http://crackstation.net/hashing-security.htm
+翻译文章:http://drops.wooyun.org/papers/1066
+功能声明:https://defuse.ca/php-pbkdf2.htm
+Github(Origin):https://github.com/defuse/password-hashing
+</code></pre><hr>
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><pre><code>大多数开发者(应当)知道可以通过HASH来保护密码安全，但是如何来保证足够强度的安全呢?有经验的开发者告诉我们可以通过增加盐(salt)来增强安全度。但是在处理这件事的操作上，很多人都犯了错。那么该如何对密码进行恰当的处理来阻止或者减弱例如彩虹表,基于时间差攻击等方式的攻击呢。
+</code></pre><h3 id="攻击方式"><a href="#攻击方式" class="headerlink" title="攻击方式"></a>攻击方式</h3><h4 id="A-查表破解"><a href="#A-查表破解" class="headerlink" title="A.查表破解"></a>A.查表破解</h4><pre><code>对于特定的hash类型，如果需要破解大量hash的话，查表是一种非常有效而且快速的方式。它的理念就是预先计算(pre-compute)出密码字典中每一个密码的hash。然后把hash和对应的密码保存在一个表里。一个设计良好的查询表结构，即使存储了数十亿个hash，每秒钟仍然可以查询成百上千个hash。
+</code></pre><h4 id="B-反向查表破解"><a href="#B-反向查表破解" class="headerlink" title="B.反向查表破解"></a>B.反向查表破解</h4><pre><code>这种方式可以让攻击者不预先计算一个查询表的情况下同时对大量hash进行字典和暴力破解攻击。
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/04/13/在Ubuntu上安装HEXO及其配置/" class="archive-article-date">
-  <time datetime="2016-04-13T14:19:43.000Z" itemprop="datePublished">Apr 13</time>
-</a>
+首先，攻击者会根据获取到的数据库数据制作一个用户名和对应的hash表。然后将常见的字典密码进行hash之后，跟这个表的hash进行对比，就可以知道用哪些用户使用了这个密码。这种攻击方式很有效果，因为通常情况下很多用户都会有使用相同的密码。
+</code></pre><h4 id="C-彩虹表"><a href="#C-彩虹表" class="headerlink" title="C.彩虹表"></a>C.彩虹表</h4><pre><code>彩虹表是一种使用空间换取时间的技术。跟查表破解很相似。只是它牺牲了一些破解时间来达到更小的存储空间的目的。因为彩虹表使用的存储空间更小，所以单位空间就可以存储更多的hash。彩虹表已经能够破解8位长度的任意[md5hash](http://www.freerainbowtables.com/en/tables2/)。彩虹表具体的原理可以参考http://www.project-rainbowcrack.com/
+</code></pre><h4 id="D-时间差攻击"><a href="#D-时间差攻击" class="headerlink" title="D.时间差攻击"></a>D.时间差攻击</h4><h4 id="F-HASH碰撞"><a href="#F-HASH碰撞" class="headerlink" title="F.HASH碰撞"></a>F.HASH碰撞</h4><h3 id="安全需求"><a href="#安全需求" class="headerlink" title="安全需求"></a>安全需求</h3><h4 id="A-同一个密码可以有不同的HASH值"><a href="#A-同一个密码可以有不同的HASH值" class="headerlink" title="A.同一个密码可以有不同的HASH值"></a>A.同一个密码可以有不同的HASH值</h4><h4 id="B-密码HASH串比较应当具有恒定时间"><a href="#B-密码HASH串比较应当具有恒定时间" class="headerlink" title="B.密码HASH串比较应当具有恒定时间"></a>B.密码HASH串比较应当具有恒定时间</h4><h4 id="C-密码HASH计算应当足够慢但不影响正常工作"><a href="#C-密码HASH计算应当足够慢但不影响正常工作" class="headerlink" title="C.密码HASH计算应当足够慢但不影响正常工作"></a>C.密码HASH计算应当足够慢但不影响正常工作</h4><h4 id="D-不易发生HASH碰撞"><a href="#D-不易发生HASH碰撞" class="headerlink" title="D.不易发生HASH碰撞"></a>D.不易发生HASH碰撞</h4>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/13/在Ubuntu上安装HEXO及其配置/">在Ubuntu上安装HEXO及其配置</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/04/13/Innodb与MyISAM的区别/" class="archive-article-date">
-  <time datetime="2016-04-13T05:07:59.000Z" itemprop="datePublished">Apr 13</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/06/09/正确对加盐(salt)密码进行HASH操作/" data-id="cirzvkyzs001kg46msm600det" class="article-share-link">Partager</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/13/Innodb与MyISAM的区别/">Innodb与MyISAM的区别</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/04/13/Mysql与时间段相关的sql查询统计/" class="archive-article-date">
-  <time datetime="2016-04-13T05:07:59.000Z" itemprop="datePublished">Apr 13</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/13/Mysql与时间段相关的sql查询统计/">Mysql与时间段相关的sql查询统计</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hash/">hash</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/安全/">安全</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/密码/">密码</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li></ul>
 
-    </header>
+    </footer>
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/04/13/linux常用命令的使用/" class="archive-article-date">
-  <time datetime="2016-04-13T05:07:59.000Z" itemprop="datePublished">Apr 13</time>
-</a>
-      
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/13/linux常用命令的使用/">linux常用命令的使用</a>
-    </h1>
+    <a href="/2016/08/18/使用HEXO搭建个人博客/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          使用HEXO搭建个人博客
+        
+      </div>
+    </a>
   
+  
+    <a href="/2016/04/13/在Ubuntu上安装HEXO及其配置/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">在Ubuntu上安装HEXO及其配置</div>
+    </a>
+  
+</nav>
 
-    </header>
-  </div>
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/04/13/vim模式-模式命令/" class="archive-article-date">
-  <time datetime="2016-04-13T05:07:59.000Z" itemprop="datePublished">Apr 13</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/13/vim模式-模式命令/">vim模式-模式命令</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/04/13/vim模式转换/" class="archive-article-date">
-  <time datetime="2016-04-13T05:07:59.000Z" itemprop="datePublished">Apr 13</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/13/vim模式转换/">vim模式转换</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/04/13/在Ubuntu上安装vsftpd及其配置/" class="archive-article-date">
-  <time datetime="2016-04-13T05:07:59.000Z" itemprop="datePublished">Apr 13</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/13/在Ubuntu上安装vsftpd及其配置/">在Ubuntu上安装vsftpd及其配置</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
 </section>
         
