@@ -3,16 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hexo</title>
+  <title>程序猿家的小八哥 &amp;#8211; 一个野生程序员的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+  <meta name="description" content="一个野生程序员的博客">
+<meta property="og:type" content="website">
+<meta property="og:title" content="程序猿家的小八哥 &#8211; 一个野生程序员的博客">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="程序猿家的小八哥 &#8211; 一个野生程序员的博客">
+<meta property="og:description" content="一个野生程序员的博客">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="程序猿家的小八哥 &#8211; 一个野生程序员的博客">
+<meta name="twitter:description" content="一个野生程序员的博客">
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="程序猿家的小八哥 &amp;#8211; 一个野生程序员的博客" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -33,8 +36,12 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
+        <a href="/" id="logo">程序猿家的小八哥 &amp;#8211; 一个野生程序员的博客</a>
       </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">一个野生程序员的博客</a>
+        </h2>
       
     </div>
     <div id="header-inner" class="inner">
@@ -85,13 +92,20 @@
       
         <h1 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a>环境安装</h1><h2 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h2><h2 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h2><h2 id="安装HEXO"><a href="#安装HEXO" class="headerlink" title="安装HEXO"></a>安装HEXO</h2><p>安装hexo<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo <span class="comment">#全局安装</span></div></pre></td></tr></table></figure></p>
 <p>初始化<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> ~/artilces  <span class="comment">#进入文章目录</span></div><div class="line">hexo init <span class="comment">#初始化</span></div></pre></td></tr></table></figure></p>
-<h2 id="申请Github"><a href="#申请Github" class="headerlink" title="申请Github"></a>申请Github</h2><p>好啦，至此，全部安装工作已经完成！</p>
+<h2 id="申请Github"><a href="#申请Github" class="headerlink" title="申请Github"></a>申请Github</h2><ol>
+<li>注册账号</li>
+<li>创建仓库<br> 仓库名格式:<code>&lt;your_user_name&gt;.github.io</code></li>
+</ol>
+<p>好啦，至此，全部安装工作已经完成！</p>
 <h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">hexo new <span class="string">"postName"</span>  <span class="comment">#新建文章</span></div><div class="line">hexo new page  <span class="string">"pageName"</span> <span class="comment">#新建页面</span></div><div class="line">hexo generate <span class="comment">#生成静态页面至public目录</span></div><div class="line">hexo server <span class="comment">#开启预览访问端口（默认端口4000，'ctrl + c'关闭server）</span></div><div class="line">hexo deploy <span class="comment">#部署发布</span></div></pre></td></tr></table></figure>
-<h1 id="高级应用"><a href="#高级应用" class="headerlink" title="高级应用"></a>高级应用</h1><h1 id="自动发布"><a href="#自动发布" class="headerlink" title="自动发布"></a>自动发布</h1>
+<h1 id="高级应用"><a href="#高级应用" class="headerlink" title="高级应用"></a>高级应用</h1><h2 id="发布到github"><a href="#发布到github" class="headerlink" title="发布到github"></a>发布到github</h2><p>建立关联<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> ~/articles</div><div class="line">vim _config.yml  <span class="comment">#编辑文件内容如下</span></div><div class="line"></div><div class="line"><span class="comment">#使用https方式</span></div><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repository: https://github.com/&lt;your_user_name&gt;/&lt;your_user_name&gt;.github.io.git</div><div class="line">  branch: master</div><div class="line">  </div><div class="line">  <span class="comment">#使用ssh方式，需要配置SS信任</span></div><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repository: git@github.com:&lt;your_user_name&gt;/&lt;your_user_name&gt;.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure></p>
+<p>准备环境<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure></p>
+<p>发布<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo deploy</div></pre></td></tr></table></figure></p>
+<h1 id="自动发布"><a href="#自动发布" class="headerlink" title="自动发布"></a>自动发布</h1>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/18/使用HEXO搭建个人博客/" data-id="cirzrr54l0001c46my0t38syo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/08/18/使用HEXO搭建个人博客/" data-id="cirzsmhxf0001pg6myyu03l90" class="article-share-link">Share</a>
       
       
     </footer>
@@ -136,7 +150,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/18/hello-world/" data-id="cirzrr54l0000c46mjpts2tnl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/08/18/hello-world/" data-id="cirzsmhx00000pg6m8xf20tg5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -195,7 +209,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2016 John Doe<br>
+      &copy; 2016 LunnLew<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
