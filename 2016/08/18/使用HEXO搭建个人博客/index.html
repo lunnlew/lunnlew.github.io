@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/08/18/使用HEXO搭建个人博客/index.html">
 <meta property="og:site_name" content="程序猿家的小八哥 &#8211; 一个野生程序员的博客">
 <meta property="og:description" content="生命在于折腾，又把博客折腾到Hexo了。给Hexo点赞。">
-<meta property="og:updated_time" content="2016-08-18T04:08:04.610Z">
+<meta property="og:updated_time" content="2016-08-18T04:26:42.772Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用HEXO搭建个人博客">
 <meta name="twitter:description" content="生命在于折腾，又把博客折腾到Hexo了。给Hexo点赞。">
@@ -97,7 +97,7 @@
 </ol>
 <p>好啦，至此，全部安装工作已经完成！</p>
 <h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">hexo new <span class="string">"postName"</span>  <span class="comment">#新建文章</span></div><div class="line">hexo new page  <span class="string">"pageName"</span> <span class="comment">#新建页面</span></div><div class="line">hexo generate <span class="comment">#生成静态页面至public目录</span></div><div class="line">hexo server <span class="comment">#开启预览访问端口（默认端口4000，'ctrl + c'关闭server）</span></div><div class="line">hexo deploy <span class="comment">#部署发布</span></div><div class="line">hexo generate --watch <span class="comment"># 文件改变生成</span></div><div class="line"> <span class="comment"># 生成后部署</span></div><div class="line"> hexo deploy --generate</div><div class="line"><span class="comment">#or</span></div><div class="line">hexo deploy --generate</div></pre></td></tr></table></figure>
-<h1 id="高级应用"><a href="#高级应用" class="headerlink" title="高级应用"></a>高级应用</h1><h2 id="发布到github"><a href="#发布到github" class="headerlink" title="发布到github"></a>发布到github</h2><p>建立关联<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> ~/articles</div><div class="line">vim _config.yml  <span class="comment">#编辑文件内容如下</span></div><div class="line"></div><div class="line"><span class="comment">#使用https方式</span></div><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repository: https://github.com/&lt;your_user_name&gt;/&lt;your_user_name&gt;.github.io.git</div><div class="line">  branch: master</div><div class="line">  </div><div class="line">  <span class="comment">#使用ssh方式，需要配置SSH信任</span></div><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repository: git@github.com:&lt;your_user_name&gt;/&lt;your_user_name&gt;.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure></p>
+<h1 id="高级应用"><a href="#高级应用" class="headerlink" title="高级应用"></a>高级应用</h1><h2 id="发布到github"><a href="#发布到github" class="headerlink" title="发布到github"></a>发布到github</h2><p>建立关联<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> ~/articles</div><div class="line">vim _config.yml  <span class="comment">#滚动到最后，编辑文件内容如下</span></div><div class="line"></div><div class="line"><span class="comment">#使用https方式</span></div><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repository: https://github.com/&lt;your_user_name&gt;/&lt;your_user_name&gt;.github.io.git</div><div class="line">  branch: master</div><div class="line">  </div><div class="line">  <span class="comment">#or 使用ssh方式，需要配置SSH信任</span></div><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repository: git@github.com:&lt;your_user_name&gt;/&lt;your_user_name&gt;.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure></p>
 <p>准备环境<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure></p>
 <p>发布<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo deploy</div></pre></td></tr></table></figure></p>
 
@@ -113,16 +113,6 @@
   </div>
   
     
-<nav id="article-nav">
-  
-  
-    <a href="/2016/08/18/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Ancien</strong>
-      <div class="article-nav-title">Hello World</div>
-    </a>
-  
-</nav>
-
   
 </article>
 
@@ -177,10 +167,6 @@
         
           <li>
             <a href="/2016/08/18/使用HEXO搭建个人博客/">使用HEXO搭建个人博客</a>
-          </li>
-        
-          <li>
-            <a href="/2016/08/18/hello-world/">Hello World</a>
           </li>
         
       </ul>

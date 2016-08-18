@@ -98,7 +98,7 @@
 </ol>
 <p>好啦，至此，全部安装工作已经完成！</p>
 <h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">hexo new <span class="string">"postName"</span>  <span class="comment">#新建文章</span></div><div class="line">hexo new page  <span class="string">"pageName"</span> <span class="comment">#新建页面</span></div><div class="line">hexo generate <span class="comment">#生成静态页面至public目录</span></div><div class="line">hexo server <span class="comment">#开启预览访问端口（默认端口4000，'ctrl + c'关闭server）</span></div><div class="line">hexo deploy <span class="comment">#部署发布</span></div><div class="line">hexo generate --watch <span class="comment"># 文件改变生成</span></div><div class="line"> <span class="comment"># 生成后部署</span></div><div class="line"> hexo deploy --generate</div><div class="line"><span class="comment">#or</span></div><div class="line">hexo deploy --generate</div></pre></td></tr></table></figure>
-<h1 id="高级应用"><a href="#高级应用" class="headerlink" title="高级应用"></a>高级应用</h1><h2 id="发布到github"><a href="#发布到github" class="headerlink" title="发布到github"></a>发布到github</h2><p>建立关联<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> ~/articles</div><div class="line">vim _config.yml  <span class="comment">#编辑文件内容如下</span></div><div class="line"></div><div class="line"><span class="comment">#使用https方式</span></div><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repository: https://github.com/&lt;your_user_name&gt;/&lt;your_user_name&gt;.github.io.git</div><div class="line">  branch: master</div><div class="line">  </div><div class="line">  <span class="comment">#使用ssh方式，需要配置SSH信任</span></div><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repository: git@github.com:&lt;your_user_name&gt;/&lt;your_user_name&gt;.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure></p>
+<h1 id="高级应用"><a href="#高级应用" class="headerlink" title="高级应用"></a>高级应用</h1><h2 id="发布到github"><a href="#发布到github" class="headerlink" title="发布到github"></a>发布到github</h2><p>建立关联<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> ~/articles</div><div class="line">vim _config.yml  <span class="comment">#滚动到最后，编辑文件内容如下</span></div><div class="line"></div><div class="line"><span class="comment">#使用https方式</span></div><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repository: https://github.com/&lt;your_user_name&gt;/&lt;your_user_name&gt;.github.io.git</div><div class="line">  branch: master</div><div class="line">  </div><div class="line">  <span class="comment">#or 使用ssh方式，需要配置SSH信任</span></div><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repository: git@github.com:&lt;your_user_name&gt;/&lt;your_user_name&gt;.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure></p>
 <p>准备环境<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure></p>
 <p>发布<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo deploy</div></pre></td></tr></table></figure></p>
 
@@ -110,51 +110,6 @@
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
 
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/08/18/hello-world/" class="article-date">
-  <time datetime="2016-08-18T03:04:04.272Z" itemprop="datePublished">2016-08-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/18/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/18/hello-world/" data-id="cirzstqs20000g46mxn9i2w9j" class="article-share-link">Partager</a>
-      
-      
     </footer>
   </div>
   
@@ -214,10 +169,6 @@
         
           <li>
             <a href="/2016/08/18/使用HEXO搭建个人博客/">使用HEXO搭建个人博客</a>
-          </li>
-        
-          <li>
-            <a href="/2016/08/18/hello-world/">Hello World</a>
           </li>
         
       </ul>
